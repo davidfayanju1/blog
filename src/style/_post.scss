@@ -1,0 +1,133 @@
+// default
+
+.post{
+    margin-top: 8rem;
+    width: 100%;
+
+    .post-title{
+        text-align: center;
+        
+        p{
+            color: grey;
+            margin: 2rem 0rem;
+        }
+    }
+
+    h2{
+        text-align: center;
+    }
+
+
+    p{
+        margin-top: 1rem;
+    }
+
+    .post-card-section{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
+        grid-gap: 2rem;
+        padding: 6rem 0rem;
+    }
+}
+
+
+
+// darkmode
+
+.darkmode{
+
+    .post{
+
+        .post-card{
+
+            border-radius: 5px;
+            height: auto;
+            padding: 1rem;
+            border: 2px solid white;
+
+            h2{
+                margin-bottom: 3rem;
+                color: white;
+
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 0.01rem;
+                    width: 100%;
+                    background-color:white;
+                    margin-top: 3rem;
+                }    
+            }
+
+            p{
+                margin-bottom: 1rem;
+                color: white;
+            }
+
+            i{
+                font-weight: unset;
+                color: white;
+            }
+            
+        }
+        
+    }
+
+}
+
+
+
+// lightmode
+
+.lightmode{
+
+    .post{
+
+        .post-card{
+            border-radius: 5px;
+            height: auto;
+            padding: 1rem;
+            background-color: white;
+            // border: 2px solid grey;
+            transition: all 0.25s ease-in-out;
+            &:hover{
+                box-shadow: 2px 2px 8px rgb(165, 165, 165);
+                transition: all 0.25s ease-in-out;
+            }
+            h2{
+                margin-bottom: 3rem;
+            
+                &::after{
+                    content: '';
+                    display: block;
+                    height: 0.01rem;
+                    width: 100%;
+                    background-color:grey;
+                    margin-top: 3rem;
+                }    
+            }
+
+            p{
+                margin-bottom: 1rem;
+                color: black;
+            }
+
+            i{
+                color: grey;
+            }
+            
+        }
+    }
+}
+
+
+@media screen and (max-width: 375px){
+
+    .post{
+        .post-card{
+            h2{
+                font-size: 2rem;
+            }
+        }
+    }   
+}

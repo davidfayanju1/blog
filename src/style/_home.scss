@@ -1,0 +1,81 @@
+$lightmode-color: black;
+$lightmode-backgroundcolor: rgb(243, 243, 243);
+$darkmode-btn-color: green;
+
+// default
+
+.home{
+    height: auto;
+    // padding: 2rem 0rem;
+
+
+    .home-items{
+        margin: 0rem auto;
+        width: 90%;
+        margin-top: 6rem;
+        h2{
+            font-size: 3rem;
+        }
+    }
+        
+    
+    .nav-inner{
+        margin: 0 auto;
+        width: 90%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        .nav-items{
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .login-btn{
+
+                button{
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                    border-radius: 3px;
+                }
+            }
+
+            .light-dark-icon{
+                cursor: pointer;
+            }
+
+            
+        }
+
+    }
+
+}
+
+.lightmode{
+    .home{        
+        h2{
+            color: black;
+        }
+    }
+}
+
+.darkmode{
+    .home{
+
+        
+        h2{
+            color: white;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+        .home-items{
+
+            h2{
+                text-align: center;
+            }
+        }
+}

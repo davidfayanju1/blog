@@ -1,0 +1,63 @@
+$btn-color: black;
+$background-color: rgb(243, 243, 243);
+$form-color: rgb(216, 210, 210);
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    button{
+        cursor: pointer;
+    }
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100%;
+}
+
+
+    // light mode
+.lightmode{
+    background-color: $background-color;
+    width: 100%;
+    transition: all 0.2s linear;
+    color: black;
+    nav{
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+
+    }
+    
+    button{
+        background-color: black;
+        border: none;
+        padding: 0.5rem 2rem;
+        color: white;
+    }
+    
+}
+
+// dark mode
+.darkmode{
+    background-color: $btn-color;
+    width: 100%;
+    color: white;
+    transition: all 0.2s linear;
+
+    button{
+        background-color: green;
+        border: none;
+        padding: 0.5rem 2rem;
+    }
+}
+
+
+@import './home';
+@import './post';
+@import './login';
+@import './newPost';
+@import './signup';
+@import './dashboard';
+@import './profile';
+@import './details';

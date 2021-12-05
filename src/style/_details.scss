@@ -1,0 +1,60 @@
+// default
+.blog-details{
+
+    padding: 2rem 2rem;
+    line-height: 1.5;
+
+    .details-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 100%;
+        }
+    }
+
+
+    .details-card{
+
+        .blog-author::after{
+            content: '';
+            display: block;
+            background-color: rgb(20, 17, 17);
+            height: 0.005rem;
+            width: 100%;
+            margin: 1rem 0rem;
+        }
+
+        i{
+            margin: 0.5rem 0rem;
+            color: grey;
+        }
+
+        
+    }
+}
+
+
+// darkmode
+
+// .darkmode{
+
+//     height: auto;
+
+//     // .blog-details{
+
+//     // }
+// }
+
+
+// lightmode
+
+// .lightmode{
+
+//     // .blog-details{
+
+//     // }
+// }

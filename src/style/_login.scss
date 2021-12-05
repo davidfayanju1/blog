@@ -1,0 +1,118 @@
+// default
+
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    
+    .login-header{
+        font-size: 2.3rem;
+    }
+
+    .login-error{
+        background-color: #ec3b3b;
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.7rem 1rem;
+        color: white;
+        border-radius: 5px;
+    }
+
+    form{
+        margin-top: 2rem;
+        width: 90%;
+        max-width: 30rem;
+
+        label{
+            display: block;
+            font-size: 1.1rem;
+            margin-bottom: 0.35rem;
+        }
+
+        input{
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-bottom: grey 2px solid;
+            background-color: transparent;
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        .form-group{
+            margin-bottom: 1rem;
+        }
+
+        #form-group{
+            
+            .toggle{
+                display: inline;
+                margin-left: 1rem;
+            }
+
+            input{
+                width: 88%;
+            }
+        }
+
+        button{
+            margin-top: 1.32rem;
+            width: 100%;
+            color: white;
+            font-weight: 700;
+            border: none;
+            padding: 1rem 1rem;
+            cursor: pointer;
+        }
+
+    }
+
+    .signup-text{
+        margin-top: 1rem;
+    }
+
+    
+}
+
+// lightmode
+
+.lightmode{
+
+    .login{
+
+        input{
+            color: black;
+            
+        }
+
+        input:focus{
+            outline: none;
+            border-bottom: 4px solid grey;
+            transition: all 0.25s ease-in-out;
+        }
+    }
+
+}
+
+// darkmode
+
+.darkmode{
+
+    .login{
+
+        input{
+            color: white;
+            
+        }
+
+    }
+
+}

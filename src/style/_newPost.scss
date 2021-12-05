@@ -1,0 +1,351 @@
+// default
+
+
+.new-post{
+    height: auto;
+    width: 100%;
+    padding: 2rem 0rem;
+
+    .open-btn{
+        margin: 0rem 2rem;
+        padding: 1.2rem 2rem;
+        font-size: 14px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 700;
+    }
+    
+    
+    h2{
+        text-align: center;
+        font-weight: 1700;
+        font-size: 2.7rem;
+    }
+
+    .open{
+        display: block;
+    }
+
+    .close{
+        display: none;
+    }
+
+    .blog-section{
+
+        height: 100%;
+        width: 100%;
+        padding: 0rem 2rem;
+
+        .post-header{
+            margin: 2rem 0rem;
+
+            h2{
+                text-align: unset;
+            }
+
+            .hamburger-icon{
+                display: none;
+            }
+        }
+
+        .p{
+            color: grey;
+            margin: 2rem 0rem;
+        }
+
+        .blog-card-section{
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(49%, 1fr));
+            grid-gap: 1rem;
+
+            // .card{
+            //     border-radius: 5px;
+            //     height: auto;
+            //     padding: 1rem;
+            //     border: 2px solid white;
+
+            //     h2{
+            //         margin-bottom: 3rem;
+                
+            //         &::after{
+            //             content: '';
+            //             display: block;
+            //             height: 0.01rem;
+            //             width: 100%;
+            //             background-color:white;
+            //             margin-top: 3rem;
+            //         }    
+            //     }
+
+            //     p{
+            //         margin-bottom: 1rem;
+            //     }
+                
+            // }
+        }
+        
+
+    }
+
+    
+
+    .pop-up{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+
+        form{
+            background-color: white;
+            margin: 4rem auto;
+            max-width: 30rem;
+            width: 86%;
+            padding: 3rem;
+    
+            .form-group{
+    
+                margin-bottom: 1rem;
+    
+                label{
+                    display: block;
+                }
+    
+                input{
+                    width: 100%;
+                    padding: 1rem 1rem;
+                    border: none;
+                    border-bottom: 2px solid grey;
+                    background-color: transparent;
+                    &:focus{
+                        outline: none;
+                        border: initial;
+                    }
+                }
+    
+                textarea{
+                    width: 100%;
+                    padding: 0.7rem 1rem;
+                    border: none;
+                    border-bottom: 2px solid grey;
+                    background-color: transparent;
+                    &:focus{
+                        outline: none;
+                        border: initial;
+                    }
+                }
+            }
+    
+            .post-btn{
+    
+                button{
+                    margin-top: 1.5rem;
+                    width: 100%;
+                    padding: 1.3rem 2rem;
+                    border: none;
+                    color: white;
+                    font-size: 1rem;
+                    font-weight: 700;
+                    cursor: pointer;
+                    
+     
+                }
+            }
+            
+        }
+    }
+
+    
+}
+
+// darkmode
+
+.darkmode{
+
+    .new-post{
+            height: auto !important;
+            background-color: black;
+
+            form{
+                background-color: black;
+                
+                input{
+                    color: white;
+                    
+                }
+    
+                textarea{
+                    color: white;
+                }
+            }
+
+
+            .blog-section{
+
+                .post-header{
+                    margin: 2rem 0rem;
+
+                    h2{
+                        text-align: unset;
+                    }
+
+                    .hamburger-icon{
+                        background-color: white;
+                        color: black;
+                        // padding: 1rem;
+                        font-size: 2rem;
+                        padding: 1rem 1rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 100%;
+                        cursor: pointer;
+                    }
+                }
+
+                .card{
+                    border-radius: 5px;
+                    height: auto;
+                    padding: 1rem;
+                    border: 2px solid white;
+    
+                    h2{
+                        margin-bottom: 3rem;
+                    
+                        &::after{
+                            content: '';
+                            display: block;
+                            height: 0.01rem;
+                            width: 100%;
+                            background-color:white;
+                            margin-top: 3rem;
+                        }    
+                    }
+    
+                    p{
+                        margin-bottom: 1rem;
+                    }
+
+                    i{
+                        font-weight: unset;
+                    }
+                    
+                }
+
+            }
+
+            
+        
+    }
+
+}
+
+// lightmode
+.lightmode{
+
+    .new-post{
+            height: auto !important;
+            background-color: rgb(243, 243, 243);
+
+            input{
+                color: black;
+                
+            }
+
+            textarea{
+                color:black;
+            }
+
+
+            .blog-section{
+
+                .post-header{
+                    margin: 2rem 0rem;
+
+                    h2{
+                        text-align: unset;
+                    }
+
+                    .hamburger-icon{
+                        background-color: white;
+                        color: black;
+                        font-size: 2rem;
+                        padding: 1rem 1rem;
+                        height: 3rem;
+                        width: 3rem;
+                        border-radius: 100%;
+                        cursor: pointer;
+                    }
+                }
+
+
+
+                .card{
+                    border-radius: 5px;
+                    height: auto;
+                    padding: 1rem;
+                    background-color: white;
+                    // border: 2px solid grey;
+                    transition: all 0.25s ease-in-out;
+                    &:hover{
+                        box-shadow: 2px 2px 8px rgb(165, 165, 165);
+                        transition: all 0.25s ease-in-out;
+                    }
+                    h2{
+                        margin-bottom: 3rem;
+                    
+                        &::after{
+                            content: '';
+                            display: block;
+                            height: 0.01rem;
+                            width: 100%;
+                            background-color:grey;
+                            margin-top: 3rem;
+                        }    
+                    }
+    
+                    p{
+                        margin-bottom: 1rem;
+                    }
+
+                    i{
+                        color: grey;
+                    }
+                    
+                }
+
+            }
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .post-header{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .hamburger-icon{
+            display: block !important;
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 375px) {
+    .blog-card-section{
+
+        .card{
+           h2{
+               font-size: 2rem;
+           } 
+        }
+    }
+}
