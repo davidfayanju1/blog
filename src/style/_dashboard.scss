@@ -60,13 +60,17 @@
 
         aside{
             background-color: rgb(243, 243, 243);
-            box-shadow: 0px 2px 8px grey;
+            box-shadow: 0px 2px 8px grey;            
         }
 
         .page-active{
             background-color: black;
             padding: 1.5rem 1rem;
-            color: white;
+            color: white !important;
+        }
+
+        .sidebar-link{
+            color: black;
         }
     }
 }
@@ -86,7 +90,11 @@
         .page-active{
             background-color: rgb(243, 243, 243);
             padding: 1.5rem 1rem;
-            color: black;
+            color: black !important;
+        }
+
+        .sidebar-link{
+            color: white;
         }
     }
 }
@@ -95,17 +103,15 @@
 @media screen and (max-width: 768px) {
 
     .active{
-        display: block;
+        transform: translateX(0%);
+        transition: all 0.45s ease-in-out;
     }
 
     .not-active{
-        display: none;
+        transform: translateX(-100%);
+        transition: all 0.45s ease-in-out;       
     }
         
-    // aside{
-    //         display: none;
-    //     }
-
         
     .pages{
             margin-left: 0rem !important ;

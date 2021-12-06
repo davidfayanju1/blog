@@ -92,11 +92,20 @@ export const AuthProvider = ({children}) => {
     const logout = async () => {
 
         try{
-            auth.signOut();
+             await auth.signOut();
         } catch(err){
             console.log(err);
         }
 
+    }
+
+    const deleteAcc = async () => {
+
+        try{
+            await auth.currentUser.delete()
+        }catch (err){
+            console.log(err)
+        }
     }
 
     useEffect(()=> {
@@ -120,7 +129,8 @@ export const AuthProvider = ({children}) => {
         loginError,
         updateUserProfile,
         signupError,
-        blogPost        
+        blogPost,
+        deleteAcc        
     }
     
     return (

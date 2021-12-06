@@ -1,4 +1,4 @@
-import React, { useState, useRef} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import profile from '../images/profile.png';
 import { BsFillPlusCircleFill } from 'react-icons/bs';
 import { useAuth } from '../authContext';
@@ -8,10 +8,10 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 const Profile = ({ toggleSidebar }) => {
 
     const display = useRef();
-    const [loading, setLoading ] = useState(true);
+    const [loading, setLoading ] = useState(false);
     const [ file, setfile ] = useState(profile)
     const { updateUserProfile, currentUser } = useAuth();
-
+    const [btn, setBtn ] = useState(false)
    
 
     const handleClick = (e) => {
@@ -23,12 +23,10 @@ const Profile = ({ toggleSidebar }) => {
 
         uploadBytes(storageRef, image)
         .then((snapshot) => {
-
+            
             getDownloadURL(storageRef)
             .then((url) => {
-                setLoading(false)
                 setfile(url)
-                console.log('done')
             })
             .catch((err)=> {
                 console.log(err)
@@ -42,10 +40,26 @@ const Profile = ({ toggleSidebar }) => {
     
     
     const formSubmit = (e) => {        
-        e.preventDefault();        
+        e.preventDefault();
         updateUserProfile(display.current.value, file);
-                
+
+        // if(file !== profile){
+        //     setLoading(true)            
+        // }else{
+        //     console.log('EQUAL')
+        // }
     }
+
+    useEffect(() => {
+
+        if(file === profile){
+            setLoading(true)
+
+        }else{
+            setLoading(false)
+        }
+
+    },[file, profile, loading])
     
   
     return ( 
@@ -81,7 +95,7 @@ const Profile = ({ toggleSidebar }) => {
                 </div>
 
                 <div className="submit-button">
-                    <button>UPDATE PROFILE</button>
+                    <button disabled={ loading }>UPDATE PROFILE</button>
                 </div>
             </form>
         </div>
