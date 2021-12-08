@@ -62,9 +62,9 @@ const Details = () => {
                     blogItems &&  blogItems.map((blog) => {
                             return(
                                 <div className="details-card" key={blog.id}>
-                                    <p className="blog-author"> - {blog.author}</p>
+                                    <i className="blog-author"> - {blog.author}</i>
                                     <h2>{blog.title}</h2>
-                                    <i>{moment(blog.createdAt.toDate().toString()).calendar()}</i>
+                                    <p>{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
                                     <p>{blog.blog}</p>
                                 </div>
                             )

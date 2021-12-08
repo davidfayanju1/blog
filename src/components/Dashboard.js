@@ -33,7 +33,7 @@ const Dashboard = () => {
             .where("uid", "==", currentUser.uid)
             .get();
 
-            const data = await query.docs[0].data();
+            const data = query.docs[0].data();
 
             setUserData(data.name);
         }catch (err){
@@ -61,10 +61,19 @@ const Dashboard = () => {
         setOpenSidebar(false);
     }
 
+    const [ deleteAcctPop, setDeleteAcctPop ] = useState(false);
     const [ openSidebar, setOpenSidebar ] = useState(false);
 
     const toggleSidebar = () => {
-        setOpenSidebar(!openSidebar)
+        setOpenSidebar(!openSidebar);
+    }
+
+    const showDeleteAcct = () => {
+        setDeleteAcctPop(true)
+    }
+
+    const closeDeletePop = () => {
+        setDeleteAcctPop(false)
     }
 
     const deleteBtn = (e) => {
@@ -93,9 +102,27 @@ const Dashboard = () => {
                         <p>Home</p>    
                     </Link>
                 </div>                    
-                <button onClick = { logoutBtn }>LOGOUT</button>
-                <button onClick = { deleteBtn }>DELETE ACCOUNT</button>
+                <button className="logout-btn" onClick = { logoutBtn }>LOGOUT</button>
+                <button className="delete-acct-btn" onClick = { showDeleteAcct }>DELETE ACCOUNT</button>
             </aside>
+
+            <>
+                {
+                    deleteAcctPop && 
+                    <div className="delete-acct-pop">
+                        <div className="del-acct-card">
+                            <p>Are You Sure You want to do this?</p>
+
+                            <div className="option-btn">
+                                <button onClick = { deleteBtn }>OK</button>
+                                <button onClick = { closeDeletePop }>Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                }   
+            </>
+
+            
 
             <div className="pages">
                     {showComp ? <Profile toggleSidebar={ toggleSidebar }/> : <NewPost toggleSidebar={ toggleSidebar }/>}

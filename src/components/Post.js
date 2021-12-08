@@ -58,17 +58,13 @@ const Post = () => {
                             <Link to={`/blog/${blog.id}`} style={{textDecoration:'none'}}>
                                 <div className="post-card" key={blog.id}>
                                     <h2>{blog.title}</h2>
-                                    <p> - {blog.author}</p>
-                                    <i>{moment(blog.createdAt.toDate().toString()).calendar()}</i>
+                                    <i> - {blog.author}</i>
+                                    <p>{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
                                 </div>
                             </Link>
                         )
                     })
-                
                     :
-
-                    
-
                     <h2>In a Minute...</h2>
                     }
             </div>

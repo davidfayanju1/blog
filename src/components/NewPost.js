@@ -27,10 +27,8 @@ const NewPost = ({ toggleSidebar }) => {
         setForm(true)
     }
 
-    // const closeForm = () => {
-    //     setForm(false);
-
-    // }
+    const [items, setItems] = useState('')
+    
 
     const fetchPost = async () => {
 
@@ -44,14 +42,13 @@ const NewPost = ({ toggleSidebar }) => {
             data.docs.forEach(blogItem => {
 
                 if(blogItem.data().uid ===  currentUser.uid){
-
+                    setLoading(false)
                     setBlogItems(item => [...item, blogItem.data()])
 
                 }else{
                     return null
                 }
 
-                setLoading(false)
             })
             
                         
@@ -61,10 +58,11 @@ const NewPost = ({ toggleSidebar }) => {
             
     }
 
+    
     useEffect(() => {
 
         fetchPost()
-
+        
     }, [])
 
     return ( 
@@ -80,7 +78,7 @@ const NewPost = ({ toggleSidebar }) => {
 
                     <div className="form-group">
                         <label htmlFor="content">Content</label>
-                        <textarea name="content" id="" cols="30" rows="5" placeholder="blog" ref={body} required></textarea>
+                        <textarea name="content" cols="30" rows="5" placeholder="blog" ref={body} required></textarea>
                     </div>
                 
                     <div className="post-btn">
@@ -109,7 +107,7 @@ const NewPost = ({ toggleSidebar }) => {
                             )
                         })
                     :
-                    <h3>Be Patient...</h3>
+                    <h3>No Blog Post yet...</h3>                        
                     }
                 </div>
             </div>

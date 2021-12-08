@@ -11,7 +11,7 @@ const Profile = ({ toggleSidebar }) => {
     const [loading, setLoading ] = useState(false);
     const [ file, setfile ] = useState(profile)
     const { updateUserProfile, currentUser } = useAuth();
-    const [btn, setBtn ] = useState(false)
+    const [btn, setBtn ] = useState(true)
    
 
     const handleClick = (e) => {
@@ -23,7 +23,6 @@ const Profile = ({ toggleSidebar }) => {
 
         uploadBytes(storageRef, image)
         .then((snapshot) => {
-            
             getDownloadURL(storageRef)
             .then((url) => {
                 setfile(url)
@@ -39,27 +38,25 @@ const Profile = ({ toggleSidebar }) => {
     }
     
     
-    const formSubmit = (e) => {        
-        e.preventDefault();
-        updateUserProfile(display.current.value, file);
-
-        // if(file !== profile){
-        //     setLoading(true)            
-        // }else{
-        //     console.log('EQUAL')
-        // }
+    const formSubmit = async (e) => {        
+        e.preventDefault();             
+       await updateUserProfile(display.current.value, file)
+       setBtn(!btn)
     }
 
     useEffect(() => {
 
         if(file === profile){
+
             setLoading(true)
 
         }else{
+
             setLoading(false)
+
         }
 
-    },[file, profile, loading])
+    },[ file, btn ])    
     
   
     return ( 
@@ -81,7 +78,7 @@ const Profile = ({ toggleSidebar }) => {
             </div> */}
             
 
-            <form onSubmit={ formSubmit }>
+            <form >
 
                 <label htmlFor="upload">
                     <input type="file" id="upload"  accept=".jpeg, .png" onChange={ handleClick }/>
@@ -95,7 +92,7 @@ const Profile = ({ toggleSidebar }) => {
                 </div>
 
                 <div className="submit-button">
-                    <button disabled={ loading }>UPDATE PROFILE</button>
+                    <button disabled={ loading } onClick={ formSubmit }>UPDATE PROFILE</button>
                 </div>
             </form>
         </div>

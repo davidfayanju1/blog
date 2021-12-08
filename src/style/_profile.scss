@@ -89,9 +89,6 @@
         .submit-button{
             margin-top: 2rem;
                 
-            // button{
-            //     width: 80%;
-            // }
         }
 
     }
@@ -130,6 +127,17 @@
             color: black;
             font-size: 3rem;
         }
+
+
+        .submit-button{
+
+            button:disabled{
+                background-color: rgb(24, 24, 24);
+                color:rgb(223, 221, 221)     
+         }
+
+        }
+        
     }   
 }
 

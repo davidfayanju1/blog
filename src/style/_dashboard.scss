@@ -45,6 +45,42 @@
         padding: 1rem 1rem;
     }
 
+    .logout-btn{
+        font-weight: 750;
+    }
+
+    .delete-acct-btn{
+        margin-top: 1.5rem;
+        font-weight: 750;
+        background-color: rgb(170, 10, 10);
+    }
+
+    // delete account popup
+    .delete-acct-pop{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+            
+    }
+
+    .del-acct-card{
+        margin: 18rem auto;
+        height: 8rem;
+        width: 80%;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+
+    .option-btn{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
 
     .pages{
         margin-left: 14rem;
@@ -72,6 +108,10 @@
         .sidebar-link{
             color: black;
         }
+
+        .del-acct-card{
+            background-color: rgb(243, 243, 243);
+        }
     }
 }
 
@@ -95,6 +135,11 @@
 
         .sidebar-link{
             color: white;
+        }
+
+        .del-acct-card{
+            background-color: black;
+            
         }
     }
 }

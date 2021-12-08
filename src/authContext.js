@@ -81,7 +81,7 @@ export const AuthProvider = ({children}) => {
                 photoURL
             })
 
-            console.log('Updated')
+            console.log(currentUser.displayName)
 
         }catch(err){
             console.log(err);
