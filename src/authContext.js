@@ -48,7 +48,8 @@ export const AuthProvider = ({children}) => {
                  title,
                  blog,
                  createdAt: new Date(),
-                 id: uuidv4()
+                 id: uuidv4(),
+                 photo: currentUser.photoURL
              })
              
  

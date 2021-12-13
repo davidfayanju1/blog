@@ -1,8 +1,10 @@
 // default
+
 .blog-details{
 
     padding: 2rem 2rem;
-    line-height: 1.5;
+    line-height: 1.7;
+    min-height: 100vh;
 
     .details-header{
         display: flex;
@@ -13,11 +15,16 @@
             width: 4rem;
             height: 4rem;
             border-radius: 100%;
+            object-fit: cover;
         }
     }
 
 
     .details-card{
+
+        .blog-author{
+            margin-top: 2rem;
+        }
 
         .blog-author::after{
             content: '';
@@ -25,6 +32,11 @@
             background-color: rgb(20, 17, 17);
             height: 0.005rem;
             width: 100%;
+            margin: 1rem 0rem;
+        }
+
+        #createdAt{
+            color: grey;
             margin: 1rem 0rem;
         }
 

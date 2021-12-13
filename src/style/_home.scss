@@ -6,9 +6,6 @@ $darkmode-btn-color: green;
 
 .home{
     height: auto;
-    // padding: 2rem 0rem;
-
-
     .home-items{
         margin: 0rem auto;
         width: 90%;
@@ -30,19 +27,23 @@ $darkmode-btn-color: green;
         .nav-items{
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: center;
+            
 
             .login-btn{
 
                 button{
                     font-size: 1.1rem;
                     font-weight: 700;
-                    border-radius: 3px;
+                    border-radius: 4px !important;
                 }
             }
 
             .light-dark-icon{
+                
                 cursor: pointer;
+                font-size: 1.5rem;
+                margin-left: 1.5rem;
             }
 
             

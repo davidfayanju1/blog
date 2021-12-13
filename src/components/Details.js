@@ -10,8 +10,6 @@ const Details = () => {
         const [ blogItems, setBlogItems ] = useState([]);
         const [ loading, setLoading ] = useState(true)
 
-        // const { currentUser } = useAuth();
-
        const { id } = useParams()
 
        const fetchPost = async () => {
@@ -31,7 +29,6 @@ const Details = () => {
                     return null;
                 }
 
-                console.log(blogItem)
                 setLoading(false)    
             })
             
@@ -50,21 +47,21 @@ const Details = () => {
 
     return ( 
         <div className="blog-details">
-            <div className="details-header">
-                {/* <img src={ currentUser ? currentUser.photoURL : currentUser.displayName} alt="moving person" /> */}
-                <Link to="/">
-                    <button>Home</button>
-                </Link>
-            </div>            
             <div className="details-card-section">
                     {
                     !loading ? 
                     blogItems &&  blogItems.map((blog) => {
                             return(
                                 <div className="details-card" key={blog.id}>
+                                    <div className="details-header">
+                                        <img src={blog.photo} alt="moving picture" />
+                                        <Link to="/">
+                                            <button>Home</button>
+                                        </Link>
+                                    </div>
                                     <i className="blog-author"> - {blog.author}</i>
                                     <h2>{blog.title}</h2>
-                                    <p>{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
+                                    <p id="createdAt">{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
                                     <p>{blog.blog}</p>
                                 </div>
                             )

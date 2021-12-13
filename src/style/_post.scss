@@ -46,17 +46,17 @@
             border: 2px solid white;
 
             h2{
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
                 color: white;
-
-                &::after{
-                    content: '';
-                    display: block;
-                    height: 0.01rem;
-                    width: 100%;
-                    background-color:white;
-                    margin-top: 3rem;
-                }    
+                font-size: 2rem;
+                // &::after{
+                //     content: '';
+                //     display: block;
+                //     height: 0.01rem;
+                //     width: 100%;
+                //     background-color:white;
+                //     margin-top: 3rem;
+                // }    
             }
 
             p{
@@ -95,16 +95,8 @@
                 transition: all 0.25s ease-in-out;
             }
             h2{
-                margin-bottom: 3rem;
-            
-                &::after{
-                    content: '';
-                    display: block;
-                    height: 0.01rem;
-                    width: 100%;
-                    background-color:grey;
-                    margin-top: 3rem;
-                }    
+                margin-bottom: 2rem;
+                font-size: 2rem;                    
             }
 
             p{

@@ -90,15 +90,15 @@ const Dashboard = () => {
                 
                 <div>
                     <div className= {`sidebar-link  ${showComp ? 'page-active': null}`} onClick={ profilePage }>
-                        <FaUserCircle />
+                        <FaUserCircle className='side-link'/>
                         <p>Profile</p>    
                     </div>
                     <div className= {`sidebar-link  ${!showComp ? 'page-active': null}`} onClick={ blogPage }>
-                        <BsFilePost />
+                        <BsFilePost className='side-link'/>
                         <p>Posts</p>    
                     </div>
                     <Link to="/" className= 'sidebar-link' style={{textDecoration: 'none'}}>
-                        <AiFillHome />
+                        <AiFillHome className='side-link'/>
                         <p>Home</p>    
                     </Link>
                 </div>                    
@@ -114,7 +114,7 @@ const Dashboard = () => {
                             <p>Are You Sure You want to do this?</p>
 
                             <div className="option-btn">
-                                <button onClick = { deleteBtn }>OK</button>
+                                <button onClick = { deleteBtn }>YES</button>
                                 <button onClick = { closeDeletePop }>Cancel</button>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ const Dashboard = () => {
             
 
             <div className="pages">
-                    {showComp ? <Profile toggleSidebar={ toggleSidebar }/> : <NewPost toggleSidebar={ toggleSidebar }/>}
+                    {showComp ? <Profile toggleSidebar={ toggleSidebar } openSidebar={ openSidebar }/> : <NewPost toggleSidebar={ toggleSidebar } openSidebar={ openSidebar }/>}
             </div>
         </div>
      );

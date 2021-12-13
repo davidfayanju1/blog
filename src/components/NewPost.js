@@ -1,13 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
 import { useAuth } from '../authContext';
 import { db } from '../firebase';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaPlus} from 'react-icons/fa';
 import moment from 'moment';
+import { MdClose } from 'react-icons/md';
+import { FaTimes } from 'react-icons/fa'
 
 
-const NewPost = ({ toggleSidebar }) => {
+const NewPost = ({ toggleSidebar, openSidebar }) => {
+    
     const { blogPost, currentUser } = useAuth();
     const [ blogItems, setBlogItems ] = useState([]);
     const [check, setCheck] = useState(true);
@@ -19,12 +21,18 @@ const NewPost = ({ toggleSidebar }) => {
     const postBlog = (e) => {
         e.preventDefault();
         blogPost(title.current.value, body.current.value);
+        title.current.value = '';
+        body.current.value = '';
         setForm(false);
         fetchPost()
     }
 
     const openForm = () => {
         setForm(true)
+    }
+
+    const closeForm = () => {
+        setForm(false);
     }
 
     const [items, setItems] = useState('')
@@ -67,10 +75,11 @@ const NewPost = ({ toggleSidebar }) => {
 
     return ( 
         <div className="new-post">
-
-            <button onClick={ openForm } className="open-btn">Create New Project <FaPlus /></button>
             <div className={`pop-up ${form ? 'open' : 'close'}`}>
                 <form onSubmit={ postBlog }>
+                    <div className="form-icon"  >
+                        <MdClose id="icon" onClick = { closeForm }/>
+                    </div>
                     <div className="form-group">
                         <label htmlFor="title">Title</label>
                         <input type="text"  placeholder="title" ref={title} required/>
@@ -91,8 +100,12 @@ const NewPost = ({ toggleSidebar }) => {
            <div className="blog-section">
                 <div className="post-header">
                     <h2>POSTS</h2>
-                    <GiHamburgerMenu  className="hamburger-icon" onClick={ toggleSidebar }/>
+                    <div className="toggle" onClick={ toggleSidebar }>
+                        { openSidebar ? <FaTimes className="hamburger-icon"/> : <GiHamburgerMenu  className="hamburger-icon"/>}
+                    </div>
                 </div>
+                
+                <button onClick={ openForm } className="open-btn">CREATE BLOG POST<FaPlus className='open-btn-icon' /></button>
                 <p className="p">Your Blogs Appear Here</p>
                 <div className="blog-card-section">
                     {
@@ -101,6 +114,7 @@ const NewPost = ({ toggleSidebar }) => {
                             return(
                                 <div className="card" key={blog.id}>
                                     <h2>{blog.title}</h2>
+                                    <hr  style={{ color: 'rgb( 243, 243, 243)'}}/>
                                     <p>{blog.blog}</p>                                    
                                     <i>{moment(blog.createdAt.toDate().toString()).calendar()}</i>
                                 </div>

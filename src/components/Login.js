@@ -60,7 +60,7 @@ const Login = () => {
             </form>
 
             <div className="signup-text">
-                <p>Don't have an account ? <Link to="/signup" style={{textDecoration: 'none'}}>Signup</Link></p>
+                <p>Don't have an account ? <Link to="/signup" style={{textDecoration: 'underline'}} className='signup-text-link'>Signup</Link></p>
             </div>
         </div>
      );

@@ -19,19 +19,21 @@ const Home = ({ toggle, toggleLightMode }) => {
                     <div className="nav-items">
                         {currentUser ? 
 
-                        <div className="home-details">
+                            
+                        <div className="login-btn">
                             <Link to="/dashboard">
-                                <div className="dashboard-btn">
-                                    <button>VIEW PROFILE</button>
-                                </div>
+                                <button>VIEW PROFILE</button>
                             </Link>
                         </div>
+                            
                         :
-                        <Link to="/login">
-                            <div className="login-btn">
+                        
+                        <div className="login-btn">
+                            <Link to="/login">
                                 <button>LOGIN</button>
-                            </div>
-                        </Link> 
+                            </Link> 
+                        </div>
+                        
                         }   
                         <div className="light-dark-icon" onClick={ toggle }>
                             {toggleLightMode ? <HiSun /> : <BsFillMoonFill />}

@@ -55,13 +55,15 @@ const Post = () => {
 
                     blogItems.map((blog) => {
                         return(
-                            <Link to={`/blog/${blog.id}`} style={{textDecoration:'none'}}>
                                 <div className="post-card" key={blog.id}>
-                                    <h2>{blog.title}</h2>
-                                    <i> - {blog.author}</i>
-                                    <p>{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
+                                    <Link to={`/blog/${blog.id}`} style={{textDecoration:'none'}}>
+                                        <h2>{blog.title}</h2>
+                                        <hr  style={{ color: 'rgb( 243, 243, 243)'}}/>
+                                        <i> - {blog.author}</i>
+                                        <p>{moment(blog.createdAt.toDate().toString()).format('MMMM Do YYYY')}</p>
+                                    </Link>
                                 </div>
-                            </Link>
+                            
                         )
                     })
                     :

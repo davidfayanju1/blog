@@ -9,6 +9,7 @@ $form-color: rgb(216, 210, 210);
     box-sizing: border-box;
     button{
         cursor: pointer;
+        color: white !important;
     }
 }
 
@@ -16,6 +17,14 @@ body{
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
 }
+
+
+input{
+    border-radius: 0% !important;
+    font-size: 16px !important;
+    
+}
+
 
 
     // light mode
@@ -40,15 +49,21 @@ body{
 
 // dark mode
 .darkmode{
-    background-color: $btn-color;
+    // background-color: #243447;
+    background-color: #141d26;
     width: 100%;
     color: white;
     transition: all 0.2s linear;
+
+    nav{
+        box-shadow: 2px 0px 8px rgb(243, 243, 243);
+    }
 
     button{
         background-color: green;
         border: none;
         padding: 0.5rem 2rem;
+        border-radius: 3px;
     }
 }
 

@@ -3,7 +3,7 @@
 .profile{
     height: 100%;
     color: black;
-    padding: 2rem 2rem;
+    padding: 1.8rem 2rem;
     width: 100%;
 
     input[type="file"]{
@@ -12,10 +12,8 @@
 
     .profile-header{
 
-
-
         h2{
-            font-size: 3rem;
+            font-size: 2.3rem !important;
         }
 
         #hamburger-icon{
@@ -25,30 +23,25 @@
     }
 
     .profile-picture{
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
 
         img{
             width: 8rem;
             height: 8rem;
             object-fit: cover;
             border-radius: 100%;
-        }
-
-        
+        }        
 
         label{
             cursor: pointer;            
         }
-    }
-
-    .profile-picture{
-        margin-top: 1.5rem;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
 
         p{
             font-size: 1.35rem;
             color: rgb(151, 148, 148);
+            margin-left: 1.3rem;
         }
     }
 
@@ -77,7 +70,9 @@
                     border: none;
                     border-bottom: grey 2px solid;
                     background-color: transparent;
-        
+                    border-radius: 0% !important;
+                    font-size: 16px;
+                    
                     &:focus{
                         outline: none;
                     }
@@ -88,7 +83,16 @@
 
         .submit-button{
             margin-top: 2rem;
-                
+            button{
+                font-weight: 750;
+                padding: 1.1rem 1.5rem;
+                font-size: 0.85rem;
+                border-radius: 4px !important;
+            }
+
+            &:disabled{
+                color:rgb(223, 221, 221) !important;     
+            }
         }
 
     }
@@ -113,14 +117,13 @@
     
             #hamburger-icon{
                 background-color: white;
-                color: black;
-                font-size: 2rem;
-                padding: 1rem 1rem;
-                height: 3rem;
-                width: 3rem;
+                padding: 0.75rem 0.75rem;
+                height: 2.7rem;
+                width: 2.7rem;
                 border-radius: 100%;
                 cursor: pointer;
             }
+            
         }
         
         h2{
@@ -164,10 +167,9 @@
             #hamburger-icon{
                 background-color: white;
                 color: black;
-                font-size: 2rem;
-                padding: 1rem 1rem;
-                height: 3rem;
-                width: 3rem;
+                padding: 0.75rem 0.75rem;
+                height: 2.7rem;
+                width: 2.7rem;
                 border-radius: 100%;
                 cursor: pointer;
             }

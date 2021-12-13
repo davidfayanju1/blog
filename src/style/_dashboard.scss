@@ -5,6 +5,10 @@
     height: 100vh !important;
     width: 100%;
 
+    button{
+        border-radius: 4px !important;
+    }
+    
     .alert{
         font-size: 1.8rem;
     }
@@ -25,8 +29,11 @@
         left: 0;
 
         h5{
-            margin-bottom: 2.5rem;
-            font-size: 2rem;
+            margin: 2rem 1rem;
+            font-size: 1.5rem;
+            // display: flex;
+            // align-items: center;
+            // justify-content: center;
         }
 
         button{
@@ -40,9 +47,17 @@
     .sidebar-link{
         display: flex;
         cursor: pointer;
-        gap: 1rem;
         margin-bottom: 1rem;
         padding: 1rem 1rem;
+
+        .side-link{
+            font-size: 1.3rem;
+        }
+
+        p{
+            font-size: 1.1rem;
+            margin-left: 1rem;
+        }
     }
 
     .logout-btn{
@@ -53,6 +68,7 @@
         margin-top: 1.5rem;
         font-weight: 750;
         background-color: rgb(170, 10, 10);
+        border-radius: 3px;
     }
 
     // delete account popup
@@ -68,8 +84,9 @@
 
     .del-acct-card{
         margin: 18rem auto;
-        height: 8rem;
+        height: 10rem;
         width: 80%;
+        max-width: 48rem;
         padding: 2rem;
         border-radius: 5px;
     }
@@ -78,8 +95,11 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 1.5rem;
         margin-top: 1.5rem;
+
+        button{
+            margin-left: 2rem;
+        }
     }
 
     .pages{
@@ -101,7 +121,7 @@
 
         .page-active{
             background-color: black;
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
             color: white !important;
         }
 
@@ -120,16 +140,19 @@
 .darkmode{
 
     .dashboard{
+
+        
         color: white;
 
         aside{
-            background-color: black;   
-            border-right: white 2px solid;
+            // background-color: black;
+            background-color: #141d26 !important;
+            box-shadow: 0px 2px 8px grey;            
         }
 
         .page-active{
             background-color: rgb(243, 243, 243);
-            padding: 1.5rem 1rem;
+            padding: 1rem 1rem;
             color: black !important;
         }
 
@@ -138,9 +161,14 @@
         }
 
         .del-acct-card{
-            background-color: black;
+            background-color: #141d26;
             
+            .option-btn{
+                margin-left: 1rem;
+            }
         }
+
+        
     }
 }
 
@@ -153,7 +181,7 @@
     }
 
     .not-active{
-        transform: translateX(-100%);
+        transform: translateX(-120%);
         transition: all 0.45s ease-in-out;       
     }
         
